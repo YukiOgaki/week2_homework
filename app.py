@@ -3,8 +3,8 @@ from db_config import User
 
 # 全データを確認する関数
 def display_all_message():
-    for message in User.select():
-        print(f"Name: {message.user} Age: {message.age}")
+    for user in User.select():
+        print(f"Name: {user.user} Age: {user.age}")
 
 
 # 新規データを登録する関数

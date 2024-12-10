@@ -18,7 +18,7 @@ logger.addHandler(logging.StreamHandler())
 db = connect(os.environ.get("DATABASE"))  # 環境変数に合わせて変更する場合
 
 
-# メッセージのモデル
+# ユーザーのモデル
 class User(Model):
 
     id = IntegerField(primary_key=True)  # idは自動で追加されるが明示
