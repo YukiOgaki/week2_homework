@@ -1,11 +1,18 @@
-from db_config import Message
+from db_config import User
 
 
 # 全データを確認する関数
 def display_all_message():
-    messages = Message.select()
-    for message in messages:
+    for message in User.select():
         print(f"Name: {message.user} Age: {message.age}")
+
+
+# 新規データを登録する関数
+def create():
+    name = input("New user name > ")
+    age = int(input("New user age > "))
+    print(f"Add new user: {name}")
+    User.create(user=name, age=age)
 
 
 print(
@@ -29,10 +36,7 @@ def main():
             continue
 
         if message == "A":
-            name = input("New user name > ")
-            age = int(input("New user age > "))
-            print(f"Add new user: {name}")
-            Message.create(user=name, age=age)
+            create()
             continue
 
         if message == "Q":

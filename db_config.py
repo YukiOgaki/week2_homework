@@ -19,8 +19,7 @@ db = connect(os.environ.get("DATABASE"))  # 環境変数に合わせて変更す
 
 
 # メッセージのモデル
-class Message(Model):
-    """Message Model"""
+class User(Model):
 
     id = IntegerField(primary_key=True)  # idは自動で追加されるが明示
     user = CharField()
@@ -32,4 +31,4 @@ class Message(Model):
         table_name = "SQLtool"
 
 
-db.create_tables([Message])
+db.create_tables([User])
